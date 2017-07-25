@@ -10,7 +10,7 @@ List of basic routes:
 | ------------- |:-------------:| ----------------:|
 | /    | GET           | Print hai     |
 
-List of user routes:
+List of library routes:
 
 | Route             | HTTP          | Description      |
 | -------------     |:-------------:| :----------------|
