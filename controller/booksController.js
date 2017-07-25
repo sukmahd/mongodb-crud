@@ -28,8 +28,8 @@ function insertBook(req,res){
       category: req.body.category,
       stock: parseInt(req.body.stock)
     })
-    .then(function(){
-      res.send('data input success');
+    .then(function(row){
+      res.send(row);
       db.close();
     })
   })
@@ -39,8 +39,8 @@ function deleteBook(req,res){
   MongoClient.connect(url, function(err, db){
     const col = db.collection('Book')
     col.deleteOne({_id: ObjectId(`${req.params.id}`)})
-    .then(function(){
-      res.send('delete success')
+    .then(function(row){
+      res.send(row)
     })
     .catch(function(err){
       res.send(err)
@@ -61,8 +61,8 @@ function updateBook(req,res){
         stock: parseInt(req.body.stock)
       }
     })
-    .then(function(){
-      res.send('data updated')
+    .then(function(row){
+      res.send(row)
     })
   })
 }
